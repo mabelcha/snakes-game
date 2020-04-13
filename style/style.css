@@ -1,0 +1,136 @@
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #6b92b9;
+  text-align: center;
+  font-size: 30px;
+}
+.bottomLeft {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+.nav {
+  list-style-type:none; 
+  display: flex;
+  justify-content: center;
+  float: none;
+  padding:10px;
+  text-align: center;
+}
+.characters {
+  max-width: 100px;
+  max-height: 100px;
+  margin:9px;
+}
+.settingsButton {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.rulesButton {
+  position: absolute;
+  bottom: 20px;
+  right: 90px;
+  max-width: 50px;
+  max-height: 50px;
+}
+
+.rules {
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0,0,0,0.9);
+  overflow-x: hidden;
+  transition: 0.7s;
+}
+
+.overlay-content {
+  position: relative;
+  width: 90%;
+  text-align: center;
+  margin-top: 30 px;
+}
+
+.overlay p {
+  padding: 8px;
+  font-size: 36px;
+  color: white;
+  display: block;
+  transition: 0.1s;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #6b92b9;
+  font-size: 50px;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.popup .popuptext {
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -800px;
+}
+
+.character{
+  position: relative;
+  z-index: 1;
+  width:50px;
+  height: 50px;
+}
+
+.main_char {
+  /* position: fixed; */
+  /* doesn't work because everything is shifted to the right by one square */
+  /* margin-left: 25px; */
+  position: relative;
+  z-index: 2;
+  width:50px;
+  height: 50px;
+}
+
+.grid {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.grid-item {
+  outline: 1px solid grey;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+}
+
+#music {
+  visibility: hidden;
+}

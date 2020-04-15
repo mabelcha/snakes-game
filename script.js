@@ -146,6 +146,7 @@ var gameView = new Vue({
 						this.game_over = true;
 						this.powerups.football.music.pause();
 						this.powerups.football.music.currentTime = 0;
+						console.log(this.powerups.zingermans.invincible);
 						alert('F! You failed! You have ' + this.total_points + ' points!');
 						// this.powerupReset();
 						// this.powerUpTick();
@@ -417,13 +418,36 @@ var gameView = new Vue({
 				this.snake.head.col < 0 ||
 				this.snake.head.col >= this.rows
 			  ) {
-				  
+				  if (this.powerups.zingermans.invincible) {
+					switch(this.currentDirection) {
+						case 'left':
+							this.currentDirection = 'up';
+							this.snake.head.col++;
+							break;
+						case 'right':
+							this.currentDirection = 'down'
+							this.snake.head.col--;
+							break;
+						case 'down':
+							this.currentDirection = 'left'
+							this.snake.head.row--;
+							break;
+						case 'up':
+							this.currentDirection = 'right'
+							this.snake.head.row++;
+							break;
+						default:
+							this.snake.head.col++;
+							break;
+					}
+				  }
+				  else {
 				this.powerups.football.music.pause();
 				this.powerups.football.music.currentTime = 0;
 				alert('F! You failed! You have ' + this.total_points + ' points!');
 				this.total_points = 0;
 				this.beginGame();
-			
+				  }
 			  }
 		},
 		
